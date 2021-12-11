@@ -7,17 +7,10 @@ import {
 } from 'react-router-dom';
 import { BarNav } from '../components/BarNav'
 import { Home } from '../components/Home'
-import { Product } from '../components/Product'
 import {getProducts} from '../helpers/getProducts'
 import Carrito from '../components/Carrito'
 export const AppRouter = () => {
     
-    const [allProducts, setAllProducts] = useState([])
-
-     useEffect(() => {
-         getProducts()
-         .then(data => setAllProducts(data))
-     }, [])
     return (
         <div>
             <Router>

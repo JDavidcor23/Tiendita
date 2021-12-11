@@ -36,7 +36,7 @@ const [added, setAdded] = useState([])
             offer.map(popular => (
             <Card key={popular.id} style={{ width: '18rem', margin: '1rem' }}>
               <Link to="/product" product={popular.nombre}>
-              <Card.Img variant="top" src={popular.imagen} />
+              <Card.Img variant="top" src={popular.imagen} alt={popular.nombre}/>
               </Link>
               <Card.Body>
                 <Card.Title>{popular.nombre}</Card.Title>

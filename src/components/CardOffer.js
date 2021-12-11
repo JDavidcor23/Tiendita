@@ -37,7 +37,7 @@ const CardOffer = ({ productOffer }) => {
                   <div><span className="dto">{producto.descuento} % dto.</span></div>
                   <Link to= "/product">
                     <Card.Img 
-                    variant="top" src={producto.imagen} />
+                    variant="top" src={producto.imagen} alt={producto.imagen} />
                   </Link> 
                   <Card.Body>
                     <Card.Title>{producto.nombre}</Card.Title>

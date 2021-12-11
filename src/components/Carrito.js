@@ -5,7 +5,7 @@ import axios from 'axios'
 const Carrito = () => {
 
     const [carProducts, setcarProducts] = useState([])
-    const [precio, setPrecio] = useState([])
+
     const [number, setNumber] = useState(1)
     const getCarrito = async() => {
 
@@ -16,12 +16,12 @@ const Carrito = () => {
      const handleChange = (e) =>{
          setNumber(e.target.value)
      }
-    const sumar =(id)=>{
-        const thisId = carProducts.filter(p => p.id === id)
-        const resultado =  Number(thisId[0].precio) * Number(number)
-        console.log(resultado)
-        setNumber(0)
-    }
+    // const sumar =(id)=>{
+    //     const thisId = carProducts.filter(p => p.id === id)
+    //     const resultado =  Number(thisId[0].precio) * Number(number)
+    //     console.log(resultado)
+    //     setNumber(0)
+    // }
     useEffect(() => {
         getCarrito()
         
@@ -60,7 +60,7 @@ const Carrito = () => {
                                 <td>
                                     <button>-</button>
                                     <input type="num" value={number}onChange={handleChange}></input>
-                                    <button onClick={() => sumar(producto.id)}>+</button>
+                                    {/* <button onClick={() => sumar(producto.id)}>+</button> */}
                                 </td>
                                 <td>
                                     <button id={producto.id} onClick={()=> deleteData(producto.id)}>Eliminar</button>
