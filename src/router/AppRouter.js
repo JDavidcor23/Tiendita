@@ -7,32 +7,24 @@ import {
 } from 'react-router-dom';
 import { BarNav } from '../components/BarNav'
 import { Home } from '../components/Home'
-import { ManageProducts } from '../components/ManageProducts'
 import { Product } from '../components/Product'
-// import {ENDPOINT_URL} from '../helpers/Endpoint'
-
+import {getProducts} from '../helpers/getProducts'
+import Carrito from '../components/Carrito'
 export const AppRouter = () => {
     
     const [allProducts, setAllProducts] = useState([])
 
-    // useEffect(() => {
-    //     getAllProducts()
-    // }, [])
-
-    // const getAllProducts = async () => {
-    //     const res = await fetch(ENDPOINT_URL) 
-    //     const data = await res.json()
-    //     setAllProducts(data)
-    // }
-
+     useEffect(() => {
+         getProducts()
+         .then(data => setAllProducts(data))
+     }, [])
     return (
         <div>
             <Router>
                 <BarNav />
                 <Routes>
                     <Route exact path="/" element={<Home />} />
-                    <Route exact path="/form" element={<ManageProducts />} />
-                    <Route exact path="/product" element={<Product allProducts={allProducts}/>} />
+                    <Route  path="/carrito" element={<Carrito/>} />
                 </Routes>
             </Router>
         </div>

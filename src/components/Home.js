@@ -1,17 +1,19 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Hero} from './Hero'
 // import useFetchProducts from '../hooks/useFetchProducts'
 import CardOffer from './CardOffer'
 import CardPopular from './CardPopular'
+import {getProducts} from '../helpers/getProducts'
 
 
 export const Home = () => {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+         getProducts()
+         .then(data => setProducts(data))
+     }, [])
 
-// const {data:products} = useFetchProducts()
-
-
-
-
+     
     return (
        <> 
 
@@ -19,12 +21,10 @@ export const Home = () => {
             <Hero />
         </div>
         <div>
-            <CardOffer />
-            {/* <CardOffer productOffer={products}/> */}
+            <CardOffer productOffer={products}/> 
         </div>
         <div className= "">
-            <CardPopular/>
-            {/* <CardPopular productPopular={products}/> */}
+            <CardPopular productPopular={products}/> 
         </div>
 
     </>

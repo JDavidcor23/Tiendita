@@ -1,47 +1,58 @@
 import React, {useState} from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
+import axios from 'axios'
+import {URL_CARRITO} from '../helpers/Endpoint'
 
-const CardPopular = () => {
-// const CardPopular = ({ productPopular }) => {
-
-  const [added, setAdded] = useState ([])
-
-  // const handleAdd = (art) => {
-  //   let productArr = added
-  //   productArr.push(art)
-  //   setAdded(productArr)
-  //   localStorage.setItem('Cart', JSON.stringify(added))
-  // }
-
-
+const CardPopular = ({ productPopular }) => {
+   const postData = (p) =>{
+   }
+const [added, setAdded] = useState([])
+  const offer = productPopular.filter(producto => producto.descuento !== "")
+  const handleAdd = (art) => {
+     const producto = {
+       "nombre" : art.nombre,
+       "descuento" : art.descuento,
+       "imagen" : art.imagen,
+       "precio" : art.precio,
+       "descripcion" : art.descripcion,
+     }
+    let productArr = added
+    postData(art)
+    productArr.push(art)
+    setAdded(productArr)
+    localStorage.setItem('Cart', JSON.stringify(added))
+     axios.post(URL_CARRITO, producto)
+         .then(res => console.log(res.data))
+         .catch(err => console.log(err))
+  }
   return (
     <>
       <section className="containerCards">
         <h3>Populares</h3>
         <div className="products">
           <div className="product">
-        {/* {
-          productPopular.map(art => (
-            <Card key={art.id} style={{ width: '18rem', margin: '1rem' }}>
-              <Link to="/product" product={art}>
-              <Card.Img variant="top" src={art.image} />
+            {
+            offer.map(popular => (
+            <Card key={popular.id} style={{ width: '18rem', margin: '1rem' }}>
+              <Link to="/product" product={popular.nombre}>
+              <Card.Img variant="top" src={popular.imagen} />
               </Link>
               <Card.Body>
-                <Card.Title>{art.name}</Card.Title>
+                <Card.Title>{popular.nombre}</Card.Title>
                 <Card.Text>
-                <p className="price">$ {art.price}/kg</p>
+                <p className="price">$ {popular.precio}/kg</p>
                 </Card.Text>
                 <Button
-                  onClick={()=>handleAdd(art)}
+                  onClick={()=>handleAdd(popular)}
                   className="btn btn-success"
-                  style={{ backgroundColor: "#d9d2e9", color: "black", borderColor: "#d9d2e9" }}
+                  style={{ backgroundColor: "#0ac763", color: "black", borderColor: "#0ac763s" }}
                 >Agregar
                 </Button>
               </Card.Body>
             </Card>
           ))
-        } */}
+        }  
         </div>
         </div>
       </section>
