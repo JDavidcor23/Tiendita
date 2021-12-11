@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
     BrowserRouter as Router,
@@ -7,11 +7,10 @@ import {
 } from 'react-router-dom';
 import { BarNav } from '../components/BarNav'
 import { Home } from '../components/Home'
-import {getProducts} from '../helpers/getProducts'
 import Carrito from '../components/Carrito'
 export const AppRouter = () => {
-    
-    return (
+      
+    return (   
         <div>
             <Router>
                 <BarNav />

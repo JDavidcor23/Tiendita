@@ -54,7 +54,7 @@ const Carrito = () => {
                            carProducts.map(producto =>(
                             <tr>  
                                 <td>
-                                    <img src={producto.imagen}/>
+                                    <img src={producto.imagen} alt={producto.nombre}/>
                                 </td>
                                 <td>{producto.nombre}<br/>{producto.precio} </td>
                                 <td>
