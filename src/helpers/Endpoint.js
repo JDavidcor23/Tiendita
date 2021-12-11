@@ -1,0 +1,1 @@
+export const ENDPOINT_URL = 'https://tiendita-workshop-2.herokuapp.com/productos/'

@@ -1,0 +1,95 @@
+html {
+    margin: 24px 24px;
+}
+
+.containerHome{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.containerHero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 1286px;
+    height: 250px;
+    background-size: cover !important;
+    background-position: center !important;
+    background: linear-gradient(0deg, rgba(252, 70, 45, 0.24), rgba(252, 70, 45, 0.24)), url(https://res.cloudinary.com/diqhctpcx/image/upload/v1637338141/LaTiendita/banner_klnxq3.jpg), #C4C4C4;
+    border-radius: 16px;
+}
+
+.containerHero h1{
+    color: #fff;
+
+}
+
+.logo {
+    font-style: italic;
+    font-weight: 900;
+}
+
+.containerCards{
+    /* margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; */
+    max-width: 80rem;
+    margin: 2.5rem auto 0 auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0px 11px 29px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+
+}
+.containerCards h3{
+    color:black;
+    margin-bottom: 2.5rem;
+}
+.products{
+    display: flex;
+    overflow-x: scroll;
+    gap: 3rem;
+    padding-bottom: 1rem;
+
+}
+.product{
+    display:flex;
+    
+}
+.products span.dto{
+    color:#5e18bb;
+    background:#f0e3fe;
+    padding: 0.25rem;
+    border-radius: 1rem;
+}
+.product .btn-success{
+    background: #0ac763;
+    color: white;
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+}
+
+.product img{
+    max-width: 12rem;
+    max-height: 12rem;
+}
+.product .price{
+    color:#332927;
+    font-weight: bold;
+}
+.product .oldPrice{
+    text-decoration:line-through;
+    color:#b8b4b4;
+}
+.containerForm {
+    padding: 10% 30%;
+}
+
+#btns Button{
+    background-color: #d9d2e9;
+}
